@@ -90,9 +90,6 @@ static void fifo_rx_peak(struct fifo_pipe *pipe,
 	if (tail >= pipe->length)
 		tail -= pipe->length;
 
-	if (WARN_ON_ONCE(tail > pipe->length))
-		return;
-
 	len = min_t(size_t, count, pipe->length - tail);
 	if (len)
 		memcpy_fromio(data, pipe->fifo + tail, len);
@@ -129,8 +126,8 @@ static size_t fifo_tx_avail(struct fifo_pipe *pipe)
 		avail = tail - head;
 
 	if (WARN_ON_ONCE(avail > pipe->length))
-		avail = 0;
-
+		 avail = 0;
+	 
 	return avail;
 }
 

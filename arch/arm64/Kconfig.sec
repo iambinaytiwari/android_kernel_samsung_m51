@@ -1,0 +1,20 @@
+config SEC_M51_PROJECT
+        depends on ARCH_SM6150
+        default n
+        bool "Samsung M51 Project"
+        help
+          Support for Samsung M51 Project
+
+config SEC_M51_EUR_PROJECT
+        depends on SEC_M51_PROJECT
+        default n
+        bool "Samsung M51 EUR OPEN Project"
+        help
+          Support for Samsung M51 EUR OPEN Project
+
+config SEC_M51_SWA_PROJECT
+        depends on SEC_M51_PROJECT
+        default n
+        bool "Samsung M51 SWA OPEN Project"
+        help
+          Support for Samsung M51 SWA OPEN Project
