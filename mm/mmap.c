@@ -2152,7 +2152,7 @@ arch_get_unmapped_area(struct file *filp, unsigned long addr,
 				info.high_limit, info.align_mask);
 		}
 	}
-	return addr;
+	return vm_unmapped_area(&info);
 }
 #endif
 
